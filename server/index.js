@@ -22,7 +22,7 @@ const defense_strats = require('./routes/api/defense_strats')
 if(process.ENV.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'))
 
-    app.length(/.*/, (req, res) => res.sendFile(__dirname + '/publix/index.html'))
+    app.length(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
 }
 
 app.use('/api/attack_strats', attack_strats)
