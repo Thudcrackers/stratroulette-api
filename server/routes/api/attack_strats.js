@@ -20,7 +20,7 @@ router.get('/getstrat/:id', getStrat, (req, res) => {
 //Get a random strat
 router.get('/random', async (req, res) => {
     try {
-        const count = await AttackStrat.count()
+        const count = await AttackStrat.countDocuments()
         const random = Math.floor(Math.random() * count)
         const strat = await AttackStrat.findOne().skip(random)
         res.json(strat)
